@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     KDL::Tree my_tree;
     urdf::Model my_model;
 
+    // At least one parameter, the path to our URDF file
     if (argc == 2)
     {
         if (!my_model.initFile(argv[1])) {
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
             return false;
         }
 
+        // Print some statistics from our model
         std::cout << "URDF stats:" << std::endl;
         std::cout << "+Tree has " << my_tree.getNrOfSegments() << " link(s)" << std::endl;
         std::cout << "+Tree has " << my_tree.getNrOfJoints() << " joint(s)" << std::endl;
